@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Tue Sep  5 15:47:30 2017
+# Process ID: 217856
+# Current directory: C:/Users/User/Downloads/te0722_7s/test_board/v_log
+# Command line: vivado.exe -source ../scripts/script_main.tcl -mode batch -notrace -tclargs --run 1 --gui 1 --clean 2 --boardpart te0722_7s
+# Log file: C:/Users/User/Downloads/te0722_7s/test_board/v_log/vivado.log
+# Journal file: C:/Users/User/Downloads/te0722_7s/test_board/v_log\vivado.jou
+#-----------------------------------------------------------
+source ../scripts/script_main.tcl -notrace
+update_compile_order -fileset sources_1
+open_hw
+connect_hw_server
+open_hw_target
+current_hw_device [get_hw_devices xc7z007s_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z007s_1] 0]
+create_hw_cfgmem -hw_device [lindex [get_hw_devices xc7z007s_1] 0] [lindex [get_cfgmem_parts {s25fl128s-3.3v-qspi-x4-single}] 0]
+set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7z007s_1] 0]]
+set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7z007s_1] 0]]
+set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7z007s_1] 0]]
+set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7z007s_1] 0]]
+set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7z007s_1] 0]]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+set_property PROGRAM.ADDRESS_RANGE  {use_file} [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7z007s_1] 0]]
+set_property PROGRAM.FILES [list "C:/Users/User/Downloads/te0722_7s/test_board/prebuilt/boot_images/te0722_7s/fsbl_app/BOOT.bin" ] [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7z007s_1] 0]]
+set_property PROGRAM.BLANK_CHECK  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7z007s_1] 0]]
+set_property PROGRAM.ERASE  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7z007s_1] 0]]
+set_property PROGRAM.CFG_PROGRAM  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7z007s_1] 0]]
+set_property PROGRAM.VERIFY  1 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7z007s_1] 0]]
+set_property PROGRAM.CHECKSUM  0 [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7z007s_1] 0]]
+startgroup 
+program_hw_cfgmem -hw_cfgmem [ get_property PROGRAM.HW_CFGMEM [lindex [get_hw_devices xc7z007s_1] 0]]
+endgroup
+boot_hw_device  [lindex [get_hw_devices xc7z007s_1] 0]
+boot_hw_device  [lindex [get_hw_devices xc7z007s_1] 0]

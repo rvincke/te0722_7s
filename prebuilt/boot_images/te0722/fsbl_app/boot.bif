@@ -1,0 +1,5 @@
+the_ROM_image:
+{
+    [bootloader]../../../software/te0722/zynq_fsbl.elf
+    ../../../hardware/te0722/test_board.bit
+}
